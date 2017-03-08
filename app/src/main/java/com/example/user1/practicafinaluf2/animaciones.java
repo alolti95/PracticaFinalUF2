@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class animaciones extends AppCompatActivity {
+public class Animaciones extends AppCompatActivity {
 
     Button btnInterpolacion, btnFotogramas, btnVolver;
 
@@ -23,6 +23,14 @@ public class animaciones extends AppCompatActivity {
 
             public void onClick(View v){
                 Intent i = new Intent(getApplicationContext(),AnimInterpolacion.class);
+                startActivity(i);
+            }
+        });
+
+        btnFotogramas.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View v){
+                Intent i = new Intent(getApplicationContext(),AnimFotogramas.class);
                 startActivity(i);
             }
         });

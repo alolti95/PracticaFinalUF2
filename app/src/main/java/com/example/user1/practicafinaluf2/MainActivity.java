@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         btnAnimacion.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
-                Intent i = new Intent(getApplicationContext(),animaciones.class);
+                Intent i = new Intent(getApplicationContext(),Animaciones.class);
                 startActivity(i);
             }
         });
