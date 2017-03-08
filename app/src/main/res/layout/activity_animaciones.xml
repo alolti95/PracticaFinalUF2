@@ -11,28 +11,30 @@
     tools:context="com.example.user1.practicafinaluf2.animaciones">
 
     <Button
-        android:text="Interpolacion"
+        android:text="@string/volver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="73dp"
-        android:id="@+id/button" />
-
-    <Button
-        android:text="Volver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginBottom="22dp"
+        android:id="@+id/btnVolver"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/button2"
-        android:layout_marginBottom="65dp"
-        android:id="@+id/button3" />
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp" />
 
     <Button
-        android:text="Fotogramas"
+        android:text="@string/fotogramas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button2"
+        android:id="@+id/btnFotogramas"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="33dp" />
+
+    <Button
+        android:text="@string/interpolacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnInterpolacion"
+        android:layout_alignBaseline="@+id/btnFotogramas"
+        android:layout_alignBottom="@+id/btnFotogramas"
+        android:layout_alignStart="@+id/btnVolver" />
 </RelativeLayout>

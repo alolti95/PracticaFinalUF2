@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".animaciones"></activity>
+        <activity android:name=".animaciones" />
+        <activity android:name=".AnimInterpolacion"></activity>
     </application>
 
 </manifest>
