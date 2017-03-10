@@ -8,8 +8,13 @@
     <string name="title_activity_gmaps">Map</string>
     <string name="foto_reducida">Foto Reducida</string>
     <string name="foto_normal">Foto Normal</string>
+    <string name="grabarVideo">Grabar</string>
+    <string name="reproducirSonido">Reproducir Sonido</string>
     <string name="iniciar_grabaci_n">INICIAR GRABACIÓN</string>
     <string name="reproducir">REPRODUCIR</string>
+    <string name="togglebutton">Grabar</string>
+    <string name="button">Button</string>
+    <string name="parar">Parar</string>
+    <string name="grabarSonido">Grabar</string>
     <string name="grabar">Grabar</string>
-    <string name="reproducir">Reproducir Sonido</string>
 </resources>

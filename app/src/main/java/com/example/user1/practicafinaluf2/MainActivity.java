@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnAnimacion, btnCamara, btnGeolocalizacion;
+    Button btnAnimacion, btnCamara, btnGeolocalizacion, btnSonido, btnVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         btnAnimacion = (Button)findViewById(R.id.btnAnimacion);
         btnGeolocalizacion = (Button)findViewById(R.id.btnGeolocalizacion);
         btnCamara = (Button)findViewById(R.id.btnCamara);
+        btnSonido = (Button)findViewById(R.id.btnSonido);
+        btnVideo = (Button)findViewById(R.id.btnVideo);
 
         btnAnimacion.setOnClickListener(new View.OnClickListener(){
 
@@ -39,6 +41,22 @@ public class MainActivity extends AppCompatActivity {
 
             public void onClick(View v){
                 Intent i = new Intent(getApplicationContext(),Camara.class);
+                startActivity(i);
+            }
+        });
+
+        btnSonido.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View v){
+                Intent i = new Intent(getApplicationContext(),Sonido.class);
+                startActivity(i);
+            }
+        });
+
+        btnVideo.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View v){
+                Intent i = new Intent(getApplicationContext(),Video.class);
                 startActivity(i);
             }
         });
