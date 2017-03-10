@@ -6,31 +6,32 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Animaciones extends AppCompatActivity {
+public class Geolocalizacion extends AppCompatActivity {
 
-    Button btnInterpolacion, btnFotogramas, btnVolver;
+    Button btnGPS, btnGMaps, btnEventos, btnVolver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_animaciones);
+        setContentView(R.layout.activity_geolocalizacion);
 
-        btnInterpolacion = (Button)findViewById(R.id.btnInterpolacion);
-        btnFotogramas = (Button)findViewById(R.id.btnFotogramas);
+        btnGPS = (Button)findViewById(R.id.btnGPS);
+        btnGMaps = (Button)findViewById(R.id.btnGMaps);
+        btnEventos = (Button)findViewById(R.id.btnEventos);
         btnVolver = (Button)findViewById(R.id.btnVolver);
 
-        btnInterpolacion.setOnClickListener(new View.OnClickListener(){
+        btnGPS.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
-                Intent i = new Intent(getApplicationContext(),AnimInterpolacion.class);
+                Intent i = new Intent(getApplicationContext(),GPS.class);
                 startActivity(i);
             }
         });
 
-        btnFotogramas.setOnClickListener(new View.OnClickListener(){
+        btnGMaps.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
-                Intent i = new Intent(getApplicationContext(),AnimFotogramas.class);
+                Intent i = new Intent(getApplicationContext(),GMaps.class);
                 startActivity(i);
             }
         });

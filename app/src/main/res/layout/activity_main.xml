@@ -19,4 +19,40 @@
         android:layout_marginStart="29dp"
         android:layout_marginTop="40dp"
         android:id="@+id/btnAnimacion" />
+
+    <Button
+        android:text="Camara"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCamara"
+        android:layout_below="@+id/btnGeolocalizacion"
+        android:layout_alignStart="@+id/btnGeolocalizacion"
+        android:layout_marginTop="44dp" />
+
+    <Button
+        android:text="Geolocalizacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnGeolocalizacion"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/btnAnimacion"
+        android:layout_alignStart="@+id/btnAnimacion" />
+
+    <Button
+        android:text="Sonido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnCamara"
+        android:layout_alignStart="@+id/btnCamara"
+        android:layout_marginTop="32dp"
+        android:id="@+id/btnSonido" />
+
+    <Button
+        android:text="Video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSonido"
+        android:layout_alignStart="@+id/btnSonido"
+        android:layout_marginTop="37dp"
+        android:id="@+id/btnVideo" />
 </RelativeLayout>

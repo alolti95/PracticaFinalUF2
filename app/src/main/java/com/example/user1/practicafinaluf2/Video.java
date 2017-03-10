@@ -6,31 +6,31 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Animaciones extends AppCompatActivity {
+public class Video extends AppCompatActivity {
 
-    Button btnInterpolacion, btnFotogramas, btnVolver;
+    Button btnGrabar, btnReproducir, btnVolver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_animaciones);
+        setContentView(R.layout.activity_video);
 
-        btnInterpolacion = (Button)findViewById(R.id.btnInterpolacion);
-        btnFotogramas = (Button)findViewById(R.id.btnFotogramas);
+        btnGrabar = (Button)findViewById(R.id.btnGrabar);
+        btnReproducir = (Button)findViewById(R.id.btnReproducir);
         btnVolver = (Button)findViewById(R.id.btnVolver);
 
-        btnInterpolacion.setOnClickListener(new View.OnClickListener(){
+        btnGrabar.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
-                Intent i = new Intent(getApplicationContext(),AnimInterpolacion.class);
+                Intent i = new Intent(getApplicationContext(),Grabacion.class);
                 startActivity(i);
             }
         });
 
-        btnFotogramas.setOnClickListener(new View.OnClickListener(){
+        btnReproducir.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
-                Intent i = new Intent(getApplicationContext(),AnimFotogramas.class);
+                Intent i = new Intent(getApplicationContext(),Reproduccion.class);
                 startActivity(i);
             }
         });
