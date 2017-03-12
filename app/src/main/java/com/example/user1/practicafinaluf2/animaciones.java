@@ -8,6 +8,7 @@ import android.widget.Button;
 
 public class Animaciones extends AppCompatActivity {
 
+    //Declaramos los botones que nos llevaran a cada tipo de animación y a la actividad principal
     Button btnInterpolacion, btnFotogramas, btnVolver;
 
     @Override
@@ -19,6 +20,9 @@ public class Animaciones extends AppCompatActivity {
         btnFotogramas = (Button)findViewById(R.id.btnFotogramas);
         btnVolver = (Button)findViewById(R.id.btnVolver);
 
+        //Métodos de cada botón.
+
+        //Botón que nos llevará a la animación de Interpolación
         btnInterpolacion.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
@@ -27,6 +31,7 @@ public class Animaciones extends AppCompatActivity {
             }
         });
 
+        //Botón que nos llevará a los fotogramas
         btnFotogramas.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
@@ -35,6 +40,7 @@ public class Animaciones extends AppCompatActivity {
             }
         });
 
+        //Botón que nos llevará a la actividad principal
         btnVolver.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){

@@ -47,7 +47,11 @@
             android:name=".GMaps"
             android:label="@string/title_activity_gmaps" />
         <activity android:name=".Video" />
-        <activity android:name=".Sonido"></activity>
+        <activity android:name=".Sonido" />
+        <activity android:name=".FotoReducida" />
+        <activity
+            android:name=".EventosMapa"
+            android:label="@string/title_activity_eventos_mapa"></activity>
     </application>
 
 </manifest>

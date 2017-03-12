@@ -3,6 +3,8 @@ package com.example.user1.practicafinaluf2;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -16,7 +18,7 @@ import android.widget.Toast;
 
 import java.io.File;
 
-public class FotoNormal extends AppCompatActivity {
+public class FotoReducida extends AppCompatActivity {
 
     private static final int APP_CAMERA = 0;
     Button btnFoto;
@@ -25,7 +27,7 @@ public class FotoNormal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_foto_normal);
+        setContentView(R.layout.activity_foto_reducida);
         btnFoto = (Button) findViewById(R.id.btnFoto);
 
         //En este botón llamamos al método que realiza la foto
@@ -76,5 +78,30 @@ public class FotoNormal extends AppCompatActivity {
                     }
                 }
         }
+    }
+
+    //Método en el que le pasamos la imagen y el tamaño que queremos obtener
+    public static Bitmap cropBitmap(Bitmap original, int height, int width) {
+        Bitmap croppedImage = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
+        Canvas canvas = new Canvas(croppedImage);
+
+        Rect srcRect = new Rect(0, 0, original.getWidth(), original.getHeight());
+        Rect dstRect = new Rect(0, 0, width, height);
+
+        int dx = (srcRect.width() - dstRect.width()) / 2;
+        int dy = (srcRect.height() - dstRect.height()) / 2;
+
+        // If the srcRect is too big, use the center part of it.
+        srcRect.inset(Math.max(0, dx), Math.max(0, dy));
+
+        // If the dstRect is too big, use the center part of it.
+        dstRect.inset(Math.max(0, -dx), Math.max(0, -dy));
+
+        // Draw the cropped bitmap in the center
+        canvas.drawBitmap(original, srcRect, dstRect, null);
+
+        original.recycle();
+
+        return croppedImage;
     }
 }

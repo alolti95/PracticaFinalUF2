@@ -19,8 +19,11 @@ public class AnimInterpolacion extends AppCompatActivity implements  View.OnClic
     }
 
     public void onClick(View v){
+        //Referenciamos la imagen que queremos utilizar
         ImageView imagen = (ImageView)findViewById(R.id.imgGoku);
+        //Cargará la imagen asignada y el fichero con la animación que debe realizar
         Animation animacion = AnimationUtils.loadAnimation(this, R.anim.venir);
+        //Iniciamos la animación
         imagen.startAnimation(animacion);
     }
 }

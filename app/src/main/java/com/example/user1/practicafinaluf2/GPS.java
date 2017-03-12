@@ -36,6 +36,7 @@ public class GPS extends AppCompatActivity implements LocationListener{
         gestorLoc.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1, this);
     }
 
+    //Método que nos indica la posición actual, latitud y longitud
     @Override
     public void onLocationChanged(Location location) {
         String text = "Posición actual:\n" + "Latitud = " + location.getLatitude() + "\n"
@@ -43,27 +44,30 @@ public class GPS extends AppCompatActivity implements LocationListener{
         Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
     }
 
+    //Método que nos muestra los distintos estados del GPS
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
         String mensaje = "";
         switch (status) {
             case LocationProvider.OUT_OF_SERVICE:
-                mensaje = "GPS status: Out of service";
+                mensaje = "GPS status: Out of service";//Mensaje fuera de servicio
                 break;
             case LocationProvider.TEMPORARILY_UNAVAILABLE:
-                mensaje = "GPS status: Temporarily unavailable";
+                mensaje = "GPS status: Temporarily unavailable";//Mensaje de temporalmente no disponible
                 break;
             case LocationProvider.AVAILABLE:
-                mensaje = "GPS status: Available";
+                mensaje = "GPS status: Available";//Mensaje de disponible
                 break;
         }
     }
 
+    //Método que nos mostrará un mensaje cuando activemos el GPS
     @Override
     public void onProviderEnabled(String provider) {
         Toast.makeText(getApplicationContext(),"GPS activado por el usuario", Toast.LENGTH_LONG).show();
     }
 
+    //Método que nos mostrará un mensaje cuando desactivemos el GPS
     @Override
     public void onProviderDisabled(String provider) {
         Toast.makeText(getApplicationContext(),"GPS desactivado por el usuario", Toast.LENGTH_LONG).show();

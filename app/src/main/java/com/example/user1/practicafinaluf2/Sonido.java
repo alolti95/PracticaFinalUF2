@@ -34,6 +34,7 @@ public class Sonido extends AppCompatActivity {
 
         btnVolver = (Button)findViewById(R.id.btnVolver);
 
+        //Botón que nos lleva a la actividad principal
         btnVolver.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
@@ -46,15 +47,14 @@ public class Sonido extends AppCompatActivity {
         mNomFitxer2 = getExternalFilesDir(null) + "/gravacio2.3gp";
     }
 
-
-
+    //Método que al pulsar el botón empezamos la reproducción
     public void onClickBotonReproducir(View view){
         if(mReproduint) {
-            //aturaReproduccio();
+            //pararReproduccio();
             pararReproduccion();
 
         }else{
-            //comencaReproduccio();
+            //empezarReproduccio();
             empezarReproduccion();
         }
 
@@ -62,22 +62,22 @@ public class Sonido extends AppCompatActivity {
     }
 
     private void empezarGrabacion()  {
-        //Crea el MediaREcorder i especifica la font d'audio, el format de sortida i el fitxer, i el codificador d'audio
+        //Crea el MediaREcorder i especifica la fuente de audio, el formato de salida y el fichero, y el codificador de audio
         //fichero = new File(Environment.DIRECTORY_MUSIC,"sonido.3gp");
 
 
 
         //Crea el MediaREcorder
         mRecorder = new MediaRecorder();
-        //especifica la font d'audio
+        //Especifica la fuente de audio
 
 
         mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        //el format de sortida
+        //Formato de salida
         mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-        //el codificador d'audio
+        //Codificador de audio
         mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-        //el fitxer
+        //Fichero
         File path = new File(Environment.getExternalStorageDirectory()
                 .getAbsolutePath());
         try {
@@ -88,17 +88,17 @@ public class Sonido extends AppCompatActivity {
         mRecorder.setOutputFile(fichero.getAbsolutePath());
 
 
-        //Enllestim la gravació
+        //Dejamos lista la grabación
         try {
             mRecorder.prepare();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //Si s'ha pogut disposar tot correctament, es comença a gravar
+        //Si esta dispuesto se empieza a grabar
         mRecorder.start();
-
     }
 
+    //Método que al pulsar el botón empezamos la grabación
     public void onClickBotonGrabar(View view){
         if(mGravant) {
             //aturaGravacio();
@@ -111,18 +111,16 @@ public class Sonido extends AppCompatActivity {
         mGravant = !mGravant;
     }
 
-
+    //Método que detiene la grabación
     private void pararGrabacion(){
         mRecorder.stop();
         mRecorder.release();
         mRecorder = null;
     }
 
-
-
+    //Método que inicia la reproducción
     private void empezarReproduccion(){
         mPlayer = new MediaPlayer();
-
 
         try {
             mPlayer.setDataSource(fichero.getAbsolutePath());
@@ -131,12 +129,11 @@ public class Sonido extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
+    //Método que detiene la reproducción
     private void pararReproduccion(){
         mPlayer.release();
         mPlayer = null;
     }
-
 }

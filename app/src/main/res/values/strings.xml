@@ -17,4 +17,5 @@
     <string name="parar">Parar</string>
     <string name="grabarSonido">Grabar</string>
     <string name="grabar">Grabar</string>
+    <string name="title_activity_eventos_mapa">Map</string>
 </resources>

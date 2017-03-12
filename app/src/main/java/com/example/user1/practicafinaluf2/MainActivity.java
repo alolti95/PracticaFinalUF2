@@ -8,6 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Declaramos los botones que nos llevaran a cada actividad
     Button btnAnimacion, btnCamara, btnGeolocalizacion, btnSonido, btnVideo;
 
     @Override
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
         btnSonido = (Button)findViewById(R.id.btnSonido);
         btnVideo = (Button)findViewById(R.id.btnVideo);
 
+        //Declaramos todos los botones que nos llevarán a las actividades
+
+        //Botón de las animaciones
         btnAnimacion.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
@@ -29,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Botón de la geolocalización
         btnGeolocalizacion.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
@@ -37,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Botón de la cámara
         btnCamara.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
@@ -45,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Botón del sonido
         btnSonido.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
@@ -53,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Botón del video
         btnVideo.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){

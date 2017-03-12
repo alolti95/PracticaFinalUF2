@@ -22,6 +22,7 @@ public class Video extends AppCompatActivity {
 
         btnVolver = (Button)findViewById(R.id.btnVolver);
 
+        //Botón que nos lleva a la actividad principal
         btnVolver.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
@@ -31,11 +32,14 @@ public class Video extends AppCompatActivity {
         });
     }
 
+    //Método que al pulsar el botón empezará abrirá la cámara y procederemos a grabar
     public void onClickBotonGrabar(View v){
         Intent intent = new Intent(android.provider.MediaStore.ACTION_VIDEO_CAPTURE);
         startActivityForResult(intent, INTENT_GRABAR_VIDEO);
     }
 
+    //Una vez que tenemos la grabación hecha el botón de reproducción se habilita, si se cancela nos mostrará un mensaje
+    //de grabación cancelada
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if(resultCode == RESULT_OK){
             if(requestCode == INTENT_GRABAR_VIDEO){
@@ -50,6 +54,7 @@ public class Video extends AppCompatActivity {
         }
     }
 
+    //Métdo que al pulsar el botón de reproducción cargará el video en el visor y lo reproducirá
     public void onClickBotonReproducir(View view){
         Toast.makeText(this, "Reproduciendo: " + uriVideo.getPath(), Toast.LENGTH_LONG).show();
 

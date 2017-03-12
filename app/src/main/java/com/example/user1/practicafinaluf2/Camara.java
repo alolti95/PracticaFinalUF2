@@ -18,6 +18,7 @@ import java.io.File;
 
 public class Camara extends AppCompatActivity {
 
+    //Botones que nos llevarán a la foto normal, reducida y a la actividad principal
     Button btnFoto1, btnFoto2, btnVolver;
 
     @Override
@@ -29,6 +30,9 @@ public class Camara extends AppCompatActivity {
         btnFoto2 = (Button)findViewById(R.id.btnFoto2);
         btnVolver = (Button)findViewById(R.id.btnVolver);
 
+        //Métodos de cada uno de los botones
+
+        //Foto normal
         btnFoto1.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
@@ -37,14 +41,16 @@ public class Camara extends AppCompatActivity {
             }
         });
 
+        //Foto reducida
         btnFoto2.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
-                Intent i = new Intent(getApplicationContext(),AnimFotogramas.class);
+                Intent i = new Intent(getApplicationContext(),FotoReducida.class);
                 startActivity(i);
             }
         });
 
+        //Actividad principal
         btnVolver.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){

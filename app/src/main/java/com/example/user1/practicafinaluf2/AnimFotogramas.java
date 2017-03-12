@@ -12,8 +12,11 @@ public class AnimFotogramas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anim_fotogramas);
 
+        //Declaramos la imagen en la que se irán mostrando los fotogramas
         ImageView imagen = (ImageView) findViewById(R.id.imgClick);
+        //Cargará los fotogramas asignados
         AnimationDrawable animacion = (AnimationDrawable) imagen.getDrawable();
+        //Iniciamos la animación
         animacion.start();
     }
 }

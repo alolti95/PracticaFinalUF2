@@ -20,6 +20,8 @@ public class Geolocalizacion extends AppCompatActivity {
         btnEventos = (Button)findViewById(R.id.btnEventos);
         btnVolver = (Button)findViewById(R.id.btnVolver);
 
+        //Métodos de cada uno de los botones
+        //Botón que nos llevará a la actividad del GPS
         btnGPS.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
@@ -28,6 +30,7 @@ public class Geolocalizacion extends AppCompatActivity {
             }
         });
 
+        //Botón que nos llevará a la actividad de GoogleMaps
         btnGMaps.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
@@ -36,6 +39,16 @@ public class Geolocalizacion extends AppCompatActivity {
             }
         });
 
+        //Botón que nos llevará a la actividad de los eventos del mapa
+        btnEventos.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View v){
+                Intent i = new Intent(getApplicationContext(),EventosMapa.class);
+                startActivity(i);
+            }
+        });
+
+        //Botón que nos llevará a la actividad principal
         btnVolver.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
